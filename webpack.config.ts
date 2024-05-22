@@ -68,14 +68,7 @@ module.exports = (env: any) => {
     },
     devtool: !env.WEBPACK_BUILD ? "source-map" : undefined,
     plugins: [
-      new webpack.EnvironmentPlugin([
-        "NODE_ENV",
-        "PORT",
-        "POWERUP_NAME",
-        "POWERUP_ID",
-        "POWERUP_APP_KEY",
-        "CONTEXT_PATH",
-      ]),
+      new webpack.EnvironmentPlugin(["PORT", "POWERUP_NAME", "POWERUP_ID", "POWERUP_APP_KEY", "CONTEXT_PATH"]),
       new CopyWebpackPlugin({
         patterns: [{ from: "static", to: "static" }],
       }),
